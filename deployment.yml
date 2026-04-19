@@ -20,4 +20,11 @@ spec:
         image: shubheksam/notes-app-k8s:latest
         ports:
         - containerPort: 80
-
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
