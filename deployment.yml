@@ -20,6 +20,15 @@ spec:
         image: shubheksam/notes-app-k8s:latest
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 100m
+            memory: 256Mi
+           
+
         livenessProbe:
           httpGet:
             path: /
